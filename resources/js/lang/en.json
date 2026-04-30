@@ -1,0 +1,18 @@
+{
+    "add_client": "Add client",
+    "buffer_time": "Buffer Time",
+    "create_service": "Create service",
+    "created_at": "Created At",
+    "duration": "Duration",
+    "enabled": "Enabled",
+    "name": "Name",
+    "new_appointment": "New Appointment",
+    "next": "Next",
+    "of": "Of",
+    "previous": "Previous",
+    "price": "Price",
+    "record": "Record",
+    "rows_per_page": "Rows per page",
+    "services": "Services",
+    "visible": "Visible"
+}

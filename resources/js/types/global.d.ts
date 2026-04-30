@@ -1,3 +1,4 @@
+import { QueryParams } from '@/core/types/pagination';
 import type { Auth } from '@/types/auth';
 
 declare module '@inertiajs/core' {
@@ -5,6 +6,7 @@ declare module '@inertiajs/core' {
         sharedPageProps: {
             name: string;
             auth: Auth;
+            queryParams?: QueryParams;
             sidebarOpen: boolean;
             [key: string]: unknown;
         };

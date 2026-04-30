@@ -25,6 +25,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            'uuid' => Str::uuid()->toString(),
+            'current_business_id' => null,
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),

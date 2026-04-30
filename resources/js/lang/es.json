@@ -1,0 +1,18 @@
+{
+    "add_client": "Añadir cliente",
+    "buffer_time": "Tiempo de Margen",
+    "create_service": "Crear servicio",
+    "created_at": "Fecha de creación",
+    "duration": "Duración",
+    "enabled": "Habilitado",
+    "name": "Nombre",
+    "new_appointment": "Nueva cita",
+    "next": "Siguiente",
+    "of": "De",
+    "previous": "Anterior",
+    "price": "Precio",
+    "record": "Registro",
+    "rows_per_page": "Filas por pagina",
+    "services": "Servicios",
+    "visible": "Visible"
+}

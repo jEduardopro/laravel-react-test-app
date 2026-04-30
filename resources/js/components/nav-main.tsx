@@ -8,8 +8,10 @@ import {
 } from '@/components/ui/sidebar';
 import { useCurrentUrl } from '@/hooks/use-current-url';
 import type { NavItem } from '@/types';
+import { useTranslation } from 'react-i18next';
 
 export function NavMain({ items = [] }: { items: NavItem[] }) {
+    const {t} = useTranslation()
     const { isCurrentUrl } = useCurrentUrl();
 
     return (
@@ -25,7 +27,7 @@ export function NavMain({ items = [] }: { items: NavItem[] }) {
                         >
                             <Link href={item.href} prefetch>
                                 {item.icon && <item.icon />}
-                                <span>{item.title}</span>
+                                <span>{t(item.title)}</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
