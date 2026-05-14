@@ -65,7 +65,15 @@ const Demo = () => {
     })
 
     function onSubmit(data: z.infer<typeof formSchema>) {
-        toast.success("You submitted the following values", { closeButton: true })
+        toast.success("You submitted the following values", { closeButton: true, dismissible: true})
+    }
+
+    const showToasters = () => {
+        toast('You submitted the following values')
+        toast.success("You submitted the following values", { closeButton: true, dismissible: true})
+        toast.error("You submitted the following values", { closeButton: true, dismissible: true})
+        toast.info("You submitted the following values", { closeButton: true, dismissible: true})
+        toast.warning("You submitted the following values", { closeButton: true, dismissible: true})
     }
 
     const data: Payment[] = [
@@ -89,7 +97,7 @@ const Demo = () => {
                     }
                 >
                     {/* <DrawerTrigger asChild> */}
-                    <Button variant="outline" onClick={() => setDrawerOpen(true)} className="capitalize">
+                    <Button variant="outline" onClick={() => showToasters()} className="capitalize">
                         Create ticket
                     </Button>
                     {/* </DrawerTrigger> */}

@@ -2,6 +2,7 @@ import { Head } from '@inertiajs/react';
 import AppearanceTabs from '@/components/appearance-tabs';
 import Heading from '@/components/heading';
 import { edit as editAppearance } from '@/routes/appearance';
+import ThemeColorSelector from '@/components/theme-color-selector';
 
 export default function Appearance() {
     return (
@@ -17,6 +18,7 @@ export default function Appearance() {
                     description="Update your account's appearance settings"
                 />
                 <AppearanceTabs />
+                <ThemeColorSelector />
             </div>
         </>
     );

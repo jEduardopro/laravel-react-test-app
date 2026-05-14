@@ -95,6 +95,27 @@ const DataTable = <TData, TValue>(props: DataTableProps<TData, TValue>) => {
         reFetchData()
     }, [paginationTable, sorting, isReFetch])
 
+    const onRowDoubleClick = (
+        event: React.MouseEvent<HTMLTableRowElement>,
+        rowData: any
+    ) => {
+        const target = event.target as HTMLElement;
+
+        // Prevent navigation when double clicking interactive elements
+        if (target.closest('button, a, input, select, textarea')) {
+            return;
+        }
+
+        event.stopPropagation();
+        event.preventDefault();
+
+        // const resource = props.routePath.split('.')[0];
+
+        // if (!resource) return;
+
+        router.get(`${props.routePath}/${rowData.id}/edit`);
+    };
+
     const table = useReactTable({
         data: props.data.data,
         columns: props.columns,
@@ -145,12 +166,12 @@ const DataTable = <TData, TValue>(props: DataTableProps<TData, TValue>) => {
             <div className="w-full flex flex-col h-[67vh] 2xl:h-[70vh] justify-start">
                 <div className="flex flex-col relative overflow-hidden rounded-lg border">
                     <Table>
-                        <TableHeader className='sticky top-0 bg-white dark:bg-slate-800 shadow z-50'>
+                        <TableHeader className='sticky top-0 bg-primary shadow z-50'>
                             {table.getHeaderGroups().map((headerGroup) => (
                                 <TableRow key={headerGroup.id}>
                                     {headerGroup.headers.map((header) => {
                                         return (
-                                            <TableHead key={header.id}>
+                                            <TableHead className='text-primary-foreground' key={header.id}>
                                                 {header.isPlaceholder
                                                     ? null
                                                     : flexRender(
@@ -168,7 +189,11 @@ const DataTable = <TData, TValue>(props: DataTableProps<TData, TValue>) => {
                                 table.getRowModel().rows.map((row) => (
                                     <TableRow
                                         key={row.id}
+                                        className='cursor-pointer'
                                         data-state={row.getIsSelected() && "selected"}
+                                        onDoubleClick={(event) =>
+                                            onRowDoubleClick(event, row.original)
+                                        }
                                     >
                                         {row.getVisibleCells().map((cell) => (
                                             <TableCell key={cell.id}>

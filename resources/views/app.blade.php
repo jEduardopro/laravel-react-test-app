@@ -9,13 +9,39 @@
             (function() {
                 const appearance = '{{ $appearance ?? "system" }}';
 
-                if (appearance === 'system') {
-                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-                    if (prefersDark) {
-                        document.documentElement.classList.add('dark');
-                    }
-                }
+                // if (appearance === 'system') {
+                //     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                //     if (prefersDark) {
+                //         document.documentElement.classList.add('dark');
+                //     }
+                // }
+
+                const themeColor =
+                    '{{ $themeColor ?? "blue" }}';
+
+
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                const resolvedAppearance = appearance === 'system'
+                        ? (prefersDark ? 'dark' : 'light')
+                        : appearance;
+
+                // Apply dark class immediately
+                document.documentElement.classList.toggle(
+                    'dark',
+                    resolvedAppearance === 'dark'
+                );
+
+                // Apply native browser color scheme
+                document.documentElement.style.colorScheme = resolvedAppearance;
+
+                // Apply shadcn custom theme
+                document.documentElement.setAttribute(
+                    'data-theme',
+                    `${themeColor}-${resolvedAppearance}`
+                );
             })();
         </script>
 

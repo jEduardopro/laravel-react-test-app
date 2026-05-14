@@ -26,3 +26,19 @@ export const dateFormat = (date: string, toFormat = 'dd-LL-yy hh:mm a'): string 
 }
 
 export const getTimezone = () => Intl.DateTimeFormat().resolvedOptions().timeZone
+
+
+export const formatMinutes = (minutes: number) => {
+    if (minutes < 60) {
+        return `${minutes} mins`;
+    }
+
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    if (remainingMinutes === 0) {
+        return `${hours} hr${hours > 1 ? "s" : ""}`;
+    }
+
+    return `${hours} hr${hours > 1 ? "s" : ""} ${remainingMinutes} mins`;
+};

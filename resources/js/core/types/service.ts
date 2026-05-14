@@ -15,9 +15,9 @@ export type Service = {
     updated_at: string;
 }
 
-// export type BusinessProps = SharedPageProps & {
-//     businesses: Business[];
-// }
+export type ServiceProps = SharedPageProps & {
+    service?: Service;
+}
 
 
 export type PaginatedServices<TData> = SharedPageProps & {

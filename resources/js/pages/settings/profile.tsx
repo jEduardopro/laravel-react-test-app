@@ -107,6 +107,7 @@ export default function Profile({
                             <div className="flex items-center gap-4">
                                 <Button
                                     disabled={processing}
+                                    className='cursor-pointer'
                                     data-test="update-profile-button"
                                 >
                                     Save

@@ -1,10 +1,12 @@
 import DataTableColumnDate from '@/components/common/data-table/data-table-column-date';
 import SortableHeader from "@/components/common/data-table/sortable-header";
-import { moneyFormat } from "@/core/helpers/formatter.helper";
+import { formatMinutes, moneyFormat } from "@/core/helpers/formatter.helper";
 import { Service } from "@/core/types/service";
 import { ColumnDef } from "@tanstack/react-table";
 import { Check, Edit, Trash, Trash2, X } from "lucide-react";
 import { Button } from '@/components/ui/button';
+import { router } from '@inertiajs/react';
+import DeleteAlertDialog from '../common/delete-alert-dialog';
 
 export const getColumns = (t: (key: string) => string): ColumnDef<Service>[] => [
     {
@@ -18,10 +20,20 @@ export const getColumns = (t: (key: string) => string): ColumnDef<Service>[] => 
         header: ({ column }) => (
             <SortableHeader column={column} sortField="duration" />
         ),
+        cell: ({ row }) => {
+            return (
+                <div>{formatMinutes(row.original.duration)}</div>
+            );
+        }
     },
     {
         accessorKey: "buffer_time",
         header: t('buffer_time'),
+        cell: ({ row }) => {
+            return (
+                <div>{formatMinutes(row.original.buffer_time)}</div>
+            );
+        }
     },
     {
         accessorKey: "price",
@@ -55,12 +67,10 @@ export const getColumns = (t: (key: string) => string): ColumnDef<Service>[] => 
 
             return <>
                 <div className='flex flex-1 justify-center items-center gap-2'>
-                    <Button size={'xs'} variant={'secondary'}>
+                    <Button className='cursor-pointer' onClick={() => router.visit(`/services/${row.original.id}/edit`)} size={'xs'} variant={'secondary'}>
                         <Edit />
                     </Button>
-                    <Button size={'xs'} variant={'destructive'}>
-                        <Trash2 />
-                    </Button>
+                    <DeleteAlertDialog resource='services' model={row.original} />
                 </div>
             </>
         }

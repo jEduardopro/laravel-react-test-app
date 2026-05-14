@@ -1,18 +1,45 @@
 {
     "add_client": "Add client",
     "buffer_time": "Buffer Time",
+    "cancel": "Cancel",
+    "confirm_delete_description": "Once deleted, this action cannot be undone.",
+    "confirm_delete_title": "Are you sure you want to delete this record?",
+    "create": "Create",
     "create_service": "Create service",
     "created_at": "Created At",
+    "delete": "Delete",
+    "description": "Description",
     "duration": "Duration",
+    "edit_service": "Edit Service",
     "enabled": "Enabled",
     "name": "Name",
     "new_appointment": "New Appointment",
+    "new_service": "New Service",
     "next": "Next",
     "of": "Of",
     "previous": "Previous",
     "price": "Price",
     "record": "Record",
+    "record_deleted_successfully": "Record deleted successfully",
     "rows_per_page": "Rows per page",
+    "save": "Save",
+    "service": {
+        "hidden": {
+            "description": "When set as hidden, a service will not be visible on your booking page.",
+            "label": "Set as hidden"
+        }
+    },
+    "service_created_successfully": "Service created successfully",
+    "service_name_placeholder": "e.g. Introductory call",
+    "service_updated_successfully": "Service updated successfully",
     "services": "Services",
+    "something_went_wrong": "Something went wrong, please contact support",
+    "time_between_dates": "Time between dates",
+    "validation": {
+        "invalid_value": "Invalid value",
+        "max_value": "Must be less than {{max}}",
+        "min_char": "{{field}} must be at least {{min}} characters",
+        "required": "{{field}} is required"
+    },
     "visible": "Visible"
 }

@@ -2,9 +2,9 @@
 
 namespace App\Domains\Services\Dtos;
 
-use App\Http\Requests\Services\CreateServiceFormRequest;
+use App\Http\Requests\Services\UpdateServiceFormRequest;
 
-class CreateServiceDto
+class UpdateServiceDto
 {
     public function __construct(
         private string $name,
@@ -17,8 +17,9 @@ class CreateServiceDto
         private ?int $position = 0,
     ) {}
 
-    public static function fromRequest(CreateServiceFormRequest $request): self
+    public static function fromRequest(UpdateServiceFormRequest $request): self
     {
+        info($request->validated('price'));
         return new self(
             name: $request->validated('name'),
             description: $request->validated('description'),
@@ -26,6 +27,7 @@ class CreateServiceDto
             bufferTime: (int) ($request->validated('buffer_time') ?? 0),
             price: (float) $request->validated('price'),
             notes: $request->validated('notes'),
+            visible: $request->validated('visible'),
             position: $request->validated('position') !== null
                 ? (int) $request->validated('position')
                 : 0,

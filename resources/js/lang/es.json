@@ -1,18 +1,45 @@
 {
     "add_client": "Añadir cliente",
     "buffer_time": "Tiempo de Margen",
+    "cancel": "Cancelar",
+    "confirm_delete_description": "Una vez eliminado, esta acción no se puede deshacer.",
+    "confirm_delete_title": "¿Estás seguro de que deseas eliminar este registro?",
+    "create": "Crear",
     "create_service": "Crear servicio",
     "created_at": "Fecha de creación",
+    "delete": "Eliminar",
+    "description": "Descripción",
     "duration": "Duración",
+    "edit_service": "Editar Servicio",
     "enabled": "Habilitado",
     "name": "Nombre",
     "new_appointment": "Nueva cita",
+    "new_service": "Nuevo Servicio",
     "next": "Siguiente",
     "of": "De",
     "previous": "Anterior",
     "price": "Precio",
     "record": "Registro",
+    "record_deleted_successfully": "Registro eliminado existosamente",
     "rows_per_page": "Filas por pagina",
+    "save": "Guardar",
+    "service": {
+        "hidden": {
+            "description": "Cuando se configura como oculto, un servicio no está visible en tu página de reservas.",
+            "label": "Establecer como oculto"
+        }
+    },
+    "service_created_successfully": "Servicio created existosamente",
+    "service_name_placeholder": "Por ejemplo, Llamada introductoria",
+    "service_updated_successfully": "Servicio actualizado existosamente",
     "services": "Servicios",
+    "something_went_wrong": "Ocurrió un error, por favor contacta a soporte",
+    "time_between_dates": "Tiempo entre citas",
+    "validation": {
+        "invalid_value": "Valor invalido",
+        "max_value": "Debe ser menor a {{max}}",
+        "min_char": "{{field}} debe tener al menos {{min}} caracteres",
+        "required": "{{field}} es requerido"
+    },
     "visible": "Visible"
 }

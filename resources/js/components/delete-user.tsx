@@ -37,6 +37,7 @@ export default function DeleteUser() {
                 <Dialog>
                     <DialogTrigger asChild>
                         <Button
+                            className='cursor-pointer'
                             variant="destructive"
                             data-test="delete-user-button"
                         >
@@ -88,6 +89,7 @@ export default function DeleteUser() {
                                         <DialogClose asChild>
                                             <Button
                                                 variant="secondary"
+                                                className='cursor-pointer'
                                                 onClick={() =>
                                                     resetAndClearErrors()
                                                 }
@@ -98,6 +100,7 @@ export default function DeleteUser() {
 
                                         <Button
                                             variant="destructive"
+                                            className='cursor-pointer'
                                             disabled={processing}
                                             asChild
                                         >

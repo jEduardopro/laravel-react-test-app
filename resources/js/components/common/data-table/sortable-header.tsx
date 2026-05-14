@@ -21,7 +21,7 @@ const SortableHeader = <TData,>(props: Props<TData>) => {
     return (
         <Button
             variant={'ghost'}
-            className={`capitalize ${isSorted ? 'bg-slate-100 dark:bg-slate-600' : ''}`}
+            className={`capitalize cursor-pointer text-primary-foreground ${isSorted ? 'bg-white text-black dark:bg-accent dark:text-white' : ''}`}
             onClick={() => props.column!.toggleSorting(props.column!.getIsSorted() === 'asc')}
         >
             {props.label ? t(props.label) : t(props.sortField)}
